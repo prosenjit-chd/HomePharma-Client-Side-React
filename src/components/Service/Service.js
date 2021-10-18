@@ -1,7 +1,8 @@
 import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
-import { ClockFill, EnvelopeFill, EyeFill } from 'react-bootstrap-icons';
+import { CartDashFill, ClockFill, EnvelopeFill, EyeFill } from 'react-bootstrap-icons';
 import { useHistory } from 'react-router';
+import { addToDb } from '../utilities/fakedb';
 
 import './Service.css';
 
@@ -37,8 +38,15 @@ const Service = (props) => {
                 <Card.Footer>
                         <Button 
                         // Workable button this is
+                            className="float-end mx-3" 
+                            variant="primary" 
+                            onClick={addToDb}
+                        ><CartDashFill/> Add to Cart</Button>
+                        
+                        <Button 
+                        // Workable button this is
                             className="float-end" 
-                            variant="danger" 
+                            variant="info" 
                             onClick={handleDetailView}
                         ><EyeFill />  More Details</Button>
                 </Card.Footer>

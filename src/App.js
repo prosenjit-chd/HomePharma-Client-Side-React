@@ -13,11 +13,15 @@ import ServiceDetails from './components/ServiceDetails/ServiceDetails';
 import Log from './components/Log/Log';
 import Faq from './components/Faq/Faq';
 import NotFound from './components/NotFound/NotFound';
+import SignUp from './components/SignUp/SignUp';
+import CalculatePrice from './components/CalculatePrice/CalculatePrice';
+import AuthProvider from './context/AuthProvider';
 
 
 function App() {
   return (
     <div className="App">
+      <AuthProvider>
       <BrowserRouter>
         <Header> </Header>
         <Switch>
@@ -42,12 +46,19 @@ function App() {
           <Route path="/faq">
               <Faq> </Faq>
             </Route>
+          <Route path="/signup">
+              <SignUp> </SignUp>
+            </Route>
+          <Route path="/calculateprice">
+              <CalculatePrice> </CalculatePrice>
+            </Route>
             <Route path="*">
               <NotFound> </NotFound>
             </Route>
         </Switch>
         <Footer> </Footer>
       </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

@@ -1,13 +1,13 @@
 /* Log In page custom style  */
 .home {
-    background-image: url('https://i.pinimg.com/originals/36/42/29/3642291603d80cbf90ee7421ba227a8b.jpg');
+    background-image: url('https://i.pinimg.com/originals/fc/5a/b4/fc5ab41838901235e71b367500577083.jpg');
     height: 100vh;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.home-detail {
+.home-detai {
     background-color: rgba(253, 245, 230, 0.74);
-    height: 450px;
+    height: 500px;
     width: 800px;
     display: flex;
     flex-direction: column;

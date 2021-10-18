@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
+import { Bicycle } from 'react-bootstrap-icons';
 // External CSS Style Added here 
 import './Footer.css'
 
@@ -83,7 +84,6 @@ const Footer = () => {
                     <div className="col-lg-3">
                         <div className="why-us">
                             <div className="why-us-logo">
-                                <i className="fas fa-rocket"></i>
                             </div>
                             <div className="why-us-detail">
                                 <h5>Fast and free delivery</h5>

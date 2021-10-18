@@ -13,13 +13,13 @@ const useFirebase = () => {
 
     const signInUsingGoogle = () => {
         setIsLoading(true);
-    //  signInWithPopup(auth, googleProvider)
-    //  .then((result) => {
-    //      console.log(result.user);
-    //      setUser(result.user);
-    //  } )
-    //  .finally(() => setIsLoading(false));
-    return signInWithPopup(auth, googleProvider);
+     signInWithPopup(auth, googleProvider)
+     .then((result) => {
+         console.log(result.user);
+         setUser(result.user);
+     } )
+     .finally(() => setIsLoading(false));
+    // return signInWithPopup(auth, googleProvider);
     }
 
     const logOut = () => {

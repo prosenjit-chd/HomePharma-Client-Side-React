@@ -1,6 +1,8 @@
 import React from 'react';
-import { Container, Nav, Navbar } from 'react-bootstrap';
+import { Container, Nav, Navbar, Button } from 'react-bootstrap';
+import { BagCheckFill } from 'react-bootstrap-icons';
 import { NavLink } from 'react-router-dom';
+import useAuth from '../../hooks/useAuth';
 
 // Header Internal Style 
 const Header = () => {
@@ -10,6 +12,7 @@ const Header = () => {
         borderBottom: "solid 2px #e6520e"
     }
 
+    const {user, logOut} = useAuth();
     // Internal Style Use here 
     return (
         <div>
@@ -24,7 +27,19 @@ const Header = () => {
                         <NavLink className="nav-link" activeStyle={activeStyle} to="/services">Medicines</NavLink>
                         <NavLink className="nav-link" activeStyle={activeStyle} to="/about">About</NavLink>
                         <NavLink className="nav-link" activeStyle={activeStyle} to="/faq">Contact</NavLink>
-                        <NavLink className="nav-link" activeStyle={activeStyle} to="/signin">SignIn</NavLink>
+                        <NavLink className="nav-link d-flex align-items-center" activeStyle={activeStyle} to="/calculateprice"> <BagCheckFill/> <span> Cart </span></NavLink>
+                        {
+                            user?.email ? 
+                            <div>
+                                <img style={{height: 40, width: 40, borderRadius: "50%"}} src={user.photoURL}/>
+                                <span> {user.displayName}</span>
+                                <Button onClick={logOut} variant="danger">LogOut</Button>
+                            </div>
+
+                            : 
+                            <NavLink className="nav-link" activeStyle={activeStyle} to="/signin">SignIn</NavLink>
+                        }
+                       
                     </Nav>
                 </Navbar.Collapse>
             </Container>
