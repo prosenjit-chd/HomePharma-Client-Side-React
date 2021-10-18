@@ -1,0 +1,14 @@
+/* Home page custom Style classes  */
+.img-custom{
+    height: 500px;
+}
+.carousel-custom{
+    margin-top: 70px;
+    margin-bottom: 30px;
+}
+h3 {
+    color: rgb(92, 4, 4);
+}
+p {
+    color: rgb(41, 2, 2);
+}
