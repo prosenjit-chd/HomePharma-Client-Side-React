@@ -1,4 +1,4 @@
-# Project Name: Easy English (For Learning English)
+# Project Name: HomePharma (For online Medicine delivery)
 
 # Live Site Link
 (https://www.facebook.com/prosenjit.chowdhury.988)
