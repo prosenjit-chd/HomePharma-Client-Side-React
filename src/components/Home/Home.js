@@ -69,7 +69,7 @@ const Home = () => {
                     {
                         service.map(course => <Service key={course.id} course={course} />)
                     }
-            </Row>
+                </Row>
             </Container>
         </div>
 

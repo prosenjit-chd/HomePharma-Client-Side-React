@@ -2,7 +2,7 @@ import React from 'react';
 import './Faq.css';
 const Faq = () => {
     return (
-        <div>
+        <div className="mt-5 pt-5">
             <div id="contact" className="contact p-5">
                 <h2 className="text-center my-4">Contact US</h2>
                 <p className="text-center w-responsive mx-auto mb-5">Do you have any questions? Please do not hesitate to contact us directly.</p>

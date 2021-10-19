@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import { CartDashFill, ClockFill, EnvelopeFill, EyeFill } from 'react-bootstrap-icons';
 import { useHistory } from 'react-router';
-import { addToDb } from '../utilities/fakedb';
+// import { addToDb } from '../utilities/fakedb';
 
 import './Service.css';
 
@@ -35,14 +35,7 @@ const Service = (props) => {
                         <ClockFill />  <span className="card-md-icon-1">{meal}</span><EnvelopeFill /><b> Catagory: </b> {catagory}
                         </div>
                 </Card.Body>
-                <Card.Footer>
-                        <Button 
-                        // Workable button this is
-                            className="float-end mx-3" 
-                            variant="primary" 
-                            onClick={addToDb}
-                        ><CartDashFill/> Add to Cart</Button>
-                        
+                <Card.Footer>                       
                         <Button 
                         // Workable button this is
                             className="float-end" 

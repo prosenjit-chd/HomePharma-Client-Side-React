@@ -5,7 +5,7 @@ import './About.css'
 
 const About = () => {
     return (
-        <div>
+        <div className="mt-5">
             {/* This is Card Component form Bootstrap. Here, uses all are bootstrap component  */}
             <Card className="text-center">
                 <Card.Img className="mt-5" variant="top" src="https://i.pinimg.com/originals/67/2c/a1/672ca1cc340534742ca116112c625911.jpg" style={{'height': '480px'}} />
@@ -52,13 +52,13 @@ const About = () => {
             <Container style={{ "marginTop": "60px" }}>
             <Col xs="12" md="12" lg="12">
                 <h2 className="t-color">Achivements</h2>
-                <Row xs={2} md={2} lg={3} className= "g-4 mb-4"> 
+                <Row xs={1} md={2} lg={3} className= "g-2 mb-4"> 
                     <Card className="h-100 cart-font">
-                        <Card.Img variant="top" src="https://lh3.googleusercontent.com/proxy/ctaslB3MyBvaAj4qHvlMtytMWZe3_PIxkGFC-e29kKMECmeTSjn9uMPvLg39F6jqp6gthD0NLRB47OghKwDAo1Xl6-bu_h-QBYfM7--kmr292ace8LQLJethwbEHhfzxCNSFY6kkbzvS8qxnlUE7" />
+                        <Card.Img variant="top" src="https://pbs.twimg.com/media/FCCEvHtUUAQi5Vp?format=jpg&name=900x900" />
                         <Card.Body>
                             <Card.Title className="text-danger">Best Pharmecy of 2020</Card.Title>
                             <Card.Text className="text-dark">
-                            The qualification required is 10+2 with Physics and Chemistry as a compulsory subjects with any one of the Mathematics or Biology subject. Note: D. Pharm (Diploma of Pharmacy) holders are eligible for admission (lateral entry). you can be confident that your certification will maintain its value.
+                            The qualification required is 10+2 with Physics and Chemistry as a compulsory subjects with any one of the Mathematics or Biology subject. Note: D. Pharm (Diploma of Pharmacy) holders are eligible for admission (lateral entry). you can be confident that your certification will maintain its value. We are cenceer about our customer. 
                             </Card.Text>
                         </Card.Body>
                     </Card>

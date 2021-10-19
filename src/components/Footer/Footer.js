@@ -1,6 +1,7 @@
+import { faBicycle } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
-import { Bicycle } from 'react-bootstrap-icons';
+import { Bicycle, BinocularsFill, CashCoin, CreditCard2Back, Headset } from 'react-bootstrap-icons';
 // External CSS Style Added here 
 import './Footer.css'
 
@@ -19,12 +20,12 @@ const Footer = () => {
                                 <li>
                                     <h5>Shop departments</h5>
                                 </li>
-                                <li>Sneakers & Athletic</li>
-                                <li>Athletic Apparel</li>
-                                <li>Sandals</li>
-                                <li>Jeans</li>
-                                <li>Shirts & Tops</li>
-                                <li>Shorts</li>
+                                <li>Medicine</li>
+                                <li>Test</li>
+                                <li>Inhaler</li>
+                                <li>Injection</li>
+                                <li>Sapogitor</li>
+                                <li>Vacine</li>
                             </ul>
                         </div>
                     </div>
@@ -84,6 +85,7 @@ const Footer = () => {
                     <div className="col-lg-3">
                         <div className="why-us">
                             <div className="why-us-logo">
+                                <BinocularsFill/>
                             </div>
                             <div className="why-us-detail">
                                 <h5>Fast and free delivery</h5>
@@ -94,7 +96,7 @@ const Footer = () => {
                     <div className="col-lg-3">
                         <div className="why-us">
                             <div className="why-us-logo">
-                                <i className="fas fa-dollar-sign"></i>
+                                <CashCoin/>
                             </div>
                             <div className="why-us-detail">
                                 <h5>Money back guarantee</h5>
@@ -105,7 +107,7 @@ const Footer = () => {
                     <div className="col-lg-3">
                         <div className="why-us">
                             <div className="why-us-logo">
-                                <i className="fas fa-headset"></i>
+                                <Headset/>
                             </div>
                             <div className="why-us-detail">
                                 <h5>24/7 customer support</h5>
@@ -116,7 +118,7 @@ const Footer = () => {
                     <div className="col-lg-3">
                         <div className="why-us">
                             <div className="why-us-logo">
-                                <i className="fas fa-credit-card"></i>
+                                <CreditCard2Back/>
                             </div>
                             <div className="why-us-detail">
                                 <h5>Secure online payment</h5>

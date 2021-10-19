@@ -1,59 +1,86 @@
-import React from 'react';
-import { Container, Button, Form } from 'react-bootstrap';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Container, Form, Button } from 'react-bootstrap';
+import { Google } from 'react-bootstrap-icons';
+import { Link } from 'react-router-dom';
 import { useHistory, useLocation } from 'react-router';
 import useAuth from '../../hooks/useAuth';
-// Custom CSS style import here 
 import './Log.css'
-import { Google } from 'react-bootstrap-icons';
 
 const Log = () => {
-    const {signInUsingGoogle} = useAuth();
-    const location = useLocation();
-    const history = useHistory();
-    // const redirect_uri = location.state?.from || '/services';
-    // console.log(location.state.from);
+    const [email, setEmail] = useState('');
+    const [password, setPassword] = useState('');
 
-    const handleGoogleSignup = () => {
-     signInUsingGoogle()
-    //  .then(result => {
-    //      history.push(redirect_uri)
-    //  } )
+    const { signInUsingGoogle, processLogin, setIsLoading, error } = useAuth();
+    const location = useLocation();
+    // console.log('came from:', location.state?.from)
+    const history = useHistory();
+    const redirect_url = location.state?.from || '/home';
+
+
+    const handleGoogleSignIn = () => {
+        signInUsingGoogle()
+            .then(result => {
+                history.push(redirect_url)
+            })
+            .finally(() => {
+                setIsLoading(false);
+            });
     }
 
+    const handleEmailChange = e => {
+        setEmail(e.target.value);
+    }
+
+    const handlePasswordChange = e => {
+        setPassword(e.target.value);
+    }
+
+    const handleSimpleSignIn = (e) => {
+        e.preventDefault();
+        console.log(email, password);
+        processLogin(email, password);
+        history.push("/home");
+    }
+
+
     return (
-        // React Bootstrap component use here 
-            <Container fluid className="home d-flex justify-content-center align-items-center">
-            <div className="home-detail">
-                <Form>
-                <Form.Group className="mb-3" controlId="formBasicEmail">
-                    <Form.Label className="title" style={{color: "#e6520e"}}>Email address</Form.Label>
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                    We'll never share your email with anyone else.
-                    </Form.Text>
-                </Form.Group>
+        <div className="home pt-2 mt-5">
+            <Container className="mt-5">
+            <div className="mt-5 py-3 px-5 mx-auto home-detail">
+                <h3 className="text-center mb-4">Signin</h3>
+                <Form onSubmit={handleSimpleSignIn}>
+                    <Form.Group className="mb-3" controlId="formBasicEmail">
+                        <Form.Label>Email address</Form.Label>
+                        <Form.Control onBlur={handleEmailChange} type="email" placeholder="Enter email" />
+                        <Form.Text className="text-muted">
+                            We'll never share your email with anyone else.
+                        </Form.Text>
+                    </Form.Group>
 
-                <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label className="title" style={{color: "#e6520e"}}>Password</Form.Label>
-                    <Form.Control type="password" placeholder="Password" />
-                </Form.Group>
-                <Form.Group className="mb-3" controlId="formBasicCheckbox">
-                    <Form.Check type="checkbox" label="Check me out" />
-                </Form.Group>
-                {/* In Active Button  */}
-                <Button variant="info" type="submit" >
-                    Submit
-                </Button>
+                    <Form.Group className="mb-3" controlId="formBasicPassword">
+                        <Form.Label>Password</Form.Label>
+                        <Form.Control onBlur={handlePasswordChange} type="password" placeholder="Password" />
+                    </Form.Group>
+                    <Form.Group className="mb-3" controlId="formBasicCheckbox">
+                        <Form.Check type="checkbox" label="Check me out" />
+                    </Form.Group>
+                    <div className="d-flex flex-column justify-content-center">
+                        <Button variant="info" type="submit">
+                            Sign In
+                        </Button>
+                        <br />
+                        <Link className="text-center" to="/registration">Create A New Account</Link>
+                        <hr />
+                        <p className="text-center">........OR..........</p>
+                        <Button className="text-light" variant="primary" onClick={handleGoogleSignIn}>
+                            <Google /> <span className="fw-bold">Sign In With Google</span>
+                        </Button>
+                    </div>
                 </Form>
-                <Link to="/signup">Create A New Account</Link>
-
-                <p className="text-success"> ......OR........</p>
-                <Button onClick={handleGoogleSignup} variant="success" type="submit" className="" > 
-                   <Google/> SignIn With Google
-                </Button>
+                <p className="text-danger">{error}</p>
             </div>
-    </Container>
+        </Container>
+        </div>
     );
 };
 

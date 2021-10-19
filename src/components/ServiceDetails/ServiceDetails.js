@@ -2,8 +2,12 @@ import React from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { Container, Button } from 'react-bootstrap';
-import { ArrowBarLeft } from 'react-bootstrap-icons';
+import { ArrowBarLeft, CartDashFill } from 'react-bootstrap-icons';
 import { useHistory, useParams } from 'react-router';
+import useCart from '../../hooks/useCart';
+import useProducts from '../../hooks/useProducts';
+import { addToDb } from '../../utilities/fakedb';
+
 
 const ServiceDetails = () => {
     // Use UseParam here 
@@ -11,7 +15,9 @@ const ServiceDetails = () => {
     // Use UseState Here 
     const [service, setService] = useState({});
     const history = useHistory();
-
+    const [services] = useProducts();
+    const [cart, setCart] = useCart(services);
+    console.log()
     // Data fetch here 
     useEffect(() => {
         fetch('../medicine.json')
@@ -28,6 +34,24 @@ const ServiceDetails = () => {
     const seeMealHandler = () => {
         history.push('/services');
     }
+
+    const handleAddToCart = (id) => {
+        const exists = cart.find(pd => pd.id === id);
+        let newCart = [];
+        if (exists) {
+            const rest = cart.filter(pd => pd.id !== id);
+            exists.quantity = exists.quantity + 1;
+            newCart = [...rest, service];
+        }
+        else {
+            service.quantity = 1;
+            newCart = [...cart, service];
+        }
+        setCart(newCart);
+        // save to local storage (for now)
+        addToDb(id);
+
+    }
     
     return (
         <div>
@@ -40,7 +64,17 @@ const ServiceDetails = () => {
                     <p className="w-75 mx-auto text-dark">{service.deatails}</p>
                     <h6 className="w-75 mx-auto">Dosages: {service.dosage}</h6>
                     <h6 className="w-75 mx-auto text-danger"><b>Side Effect: </b>{service.sideeffect}</h6>
-                    <Button variant="warning" onClick={seeMealHandler}><ArrowBarLeft size={30} /> See All Medicine</Button>
+                    <div>
+                        <Button variant="info" onClick={seeMealHandler}><ArrowBarLeft size={25} /> 
+                        See All Medicine</Button>
+                        <Button 
+                            // Workable button this is
+                                className="float-center mx-5" 
+                                variant="primary" 
+                                onClick={() => handleAddToCart(service.id)}
+                            ><CartDashFill/> Add to Cart List</Button>
+                    </div>
+
                 </div>
    
         </Container>
