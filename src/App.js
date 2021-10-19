@@ -1,9 +1,6 @@
-import logo from './logo.svg';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { Button } from 'react-bootstrap';
-import { ArrowRight } from 'react-bootstrap-icons';
 import Header from './components/Header/Header';
 import Home from './components/Home/Home';
 import Footer from './components/Footer/Footer';
@@ -23,42 +20,42 @@ function App() {
   return (
     <div className="App">
       <AuthProvider>
-      <BrowserRouter>
-        <Header> </Header>
-        <Switch>
-        <Route exact path="/">
-            <Home> </Home>
-          </Route>
-          <Route path="/home">
-            <Home> </Home>
-          </Route>
-          <Route path="/about">
-            <About> </About>
-           </Route>
-           <Route path="/services">
-              <Services> </Services>
-           </Route>
-           <PrivateRoute path="/service/:id">
-            <ServiceDetails> </ServiceDetails>
-          </PrivateRoute>
-          <Route path="/signin">
-              <Log> </Log>
-            </Route>
-          <Route path="/faq">
-              <Faq> </Faq>
-            </Route>
-          <Route path="/registration">
-              <SignUp> </SignUp>
-            </Route>
-          <Route path="/calculateprice">
-              <CalculatePrice> </CalculatePrice>
-            </Route>
-            <Route path="*">
-              <NotFound> </NotFound>
-            </Route>
-        </Switch>
-        <Footer> </Footer>
-      </BrowserRouter>
+          <BrowserRouter>
+                <Header> </Header>
+                    <Switch>
+                      <Route exact path="/">
+                          <Home> </Home>
+                      </Route>
+                      <Route path="/home">
+                        <Home> </Home>
+                      </Route>
+                      <Route path="/about">
+                        <About> </About>
+                      </Route>
+                      <Route path="/services">
+                          <Services> </Services>
+                      </Route>
+                      <PrivateRoute path="/service/:id">
+                        <ServiceDetails> </ServiceDetails>
+                      </PrivateRoute>
+                      <Route path="/signin">
+                          <Log> </Log>
+                        </Route>
+                      <Route path="/faq">
+                          <Faq> </Faq>
+                        </Route>
+                      <Route path="/registration">
+                          <SignUp> </SignUp>
+                        </Route>
+                      <PrivateRoute path="/calculateprice">
+                          <CalculatePrice> </CalculatePrice>
+                        </PrivateRoute>
+                        <Route path="*">
+                          <NotFound> </NotFound>
+                        </Route>
+                    </Switch>
+                <Footer> </Footer>
+          </BrowserRouter>
       </AuthProvider>
     </div>
   );

@@ -17,7 +17,6 @@ const ServiceDetails = () => {
     const history = useHistory();
     const [services] = useProducts();
     const [cart, setCart] = useCart(services);
-    console.log()
     // Data fetch here 
     useEffect(() => {
         fetch('../medicine.json')

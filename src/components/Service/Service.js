@@ -2,8 +2,6 @@ import React from 'react';
 import { Card, Col, Button } from 'react-bootstrap';
 import { CartDashFill, ClockFill, EnvelopeFill, EyeFill } from 'react-bootstrap-icons';
 import { useHistory } from 'react-router';
-// import { addToDb } from '../utilities/fakedb';
-
 import './Service.css';
 
 // use props 

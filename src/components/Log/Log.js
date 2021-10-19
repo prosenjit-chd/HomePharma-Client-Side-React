@@ -12,11 +12,9 @@ const Log = () => {
 
     const { signInUsingGoogle, processLogin, setIsLoading, error, setError } = useAuth();
     const location = useLocation();
-    // console.log('came from:', location.state?.from)
     const history = useHistory();
     const redirect_url = location.state?.from || '/home';
-
-
+    
     const handleGoogleSignIn = () => {
         signInUsingGoogle()
             .then(result => {

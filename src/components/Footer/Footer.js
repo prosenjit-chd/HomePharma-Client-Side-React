@@ -1,11 +1,9 @@
-import { faBicycle } from '@fortawesome/free-solid-svg-icons';
 import React from 'react';
-import { Col, Container, Row } from 'react-bootstrap';
-import { Bicycle, BinocularsFill, CashCoin, CreditCard2Back, Headset } from 'react-bootstrap-icons';
+import { BinocularsFill, CashCoin, CreditCard2Back, Headset } from 'react-bootstrap-icons';
 // External CSS Style Added here 
 import './Footer.css'
 
-// Here use all are bootstrao component 
+// Here use all are non bootstrao component 
 const Footer = () => {
     return (
         
@@ -133,95 +131,7 @@ const Footer = () => {
         </section>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {/* <Container  fluid className="footer-total">
-            <Container>
-            <Row className="">
-                <Col xs="12" md="2" lg="4">
-                <div className="d-flex justify-content-between">
-                    <div>
-                        <div className="">
-                        <small><b>Address: </b>
-                            Kalabagan, West Panthapath, Dhaka.</small>
-                        <small>Mobile: 01741362417 </small> 
-                        <small>Email: prosenjit.chd@gmail.com </small> 
-                        </div>
-                    </div>
-
-                    <div>
-                        <div className="">
-                        <ul>FOR CUSTOMER</ul>
-                        </div>
-                        <div className="">
-                        <li>Request Order</li>
-                        <li>Urgent Order</li>
-                        <li>Find Store</li>
-                        <li>How to Order</li>
-                        </div>
-                    </div>
-
-                    <div>
-                    <div className="">
-                      <ul>SUPPORT</ul>
-                    </div>
-                    <div className="">
-                      <li>Contact Us</li>
-                      <li>Return Policy</li>
-                      <li>Terms & Conditions</li>
-                      <li>Privacy Policy</li>
-                    </div>
-                    </div>
-
-                    <div>
-                    <div>
-                    <div className="footer-logo">
-                          <h5>Download the App</h5>
-                          <div>
-                            <div className="ios">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/a/ab/Apple-logo.png"
-                                    alt=""/>
-                                <div className="ios-detail">
-                                    <small>Download on the</small>
-                                    <h6>App Store</h6>
-                                </div>
-                            </div>
-                            <div className="android">
-                                <img src="https://w7.pngwing.com/pngs/538/1022/png-transparent-playstore-icon-angle-brand-yellow-media-play-2-angle-rectangle-triangle-thumbnail.png"
-                                    alt=""/>
-                                <div className="android-detail">
-                                    <small>Download on the</small>
-                                    <h6>Google Play</h6>
-                                </div>
-                            </div>
-                        </div>
-                         </div>
-                        </div>
-                    </div>
-                </div>
-                </Col>
-                <p className="text-light mt-4">© 2021 Home Pharma. All rights reserved</p>
-            </Row>
-            </Container>
-        </Container > */}
         </div>
-
     );
 };
 

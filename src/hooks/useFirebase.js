@@ -15,15 +15,6 @@ const useFirebase = () => {
     const signInUsingGoogle = () => {
         setIsLoading(true);
         const googleProvider = new GoogleAuthProvider();
-
-        // signInWithPopup(auth, googleProvider)
-        //     .then(result => {
-        //         console.log(result.user)
-        //         setUser(result.user)
-        //     })
-        //     .finally(() => {
-        //         setIsLoading(false);
-        //     });
         return signInWithPopup(auth, googleProvider);
     }
 
@@ -50,20 +41,6 @@ const useFirebase = () => {
     const processLogin = (email, password) => {
         setIsLoading(true);
         return(signInWithEmailAndPassword(auth, email, password));
-        // signInWithEmailAndPassword(auth, email, password)
-        //     .then(result => {
-        //         const { displayName, email, photoURL } = result.user;
-        //         const loggedInUser = {
-        //             name: displayName,
-        //             email: email,
-        //             photo: photoURL
-        //         };
-        //         setUser(loggedInUser);
-        //         setError('');
-        //     })
-        //     .catch(error => {
-        //         setError(error.message);
-        //     })
     }
 
     const registerNewUser = (email, password, name) => {
@@ -105,6 +82,5 @@ const useFirebase = () => {
         setError
     };
 };
-
 
 export default useFirebase;

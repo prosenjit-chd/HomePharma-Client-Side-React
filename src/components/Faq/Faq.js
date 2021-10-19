@@ -13,13 +13,13 @@ const Faq = () => {
                                 <div className="col-md-6">
                                     <div className="md-form mb-0">
                                         <input type="text" id="name" name="name" className="form-control"/>
-                                        <label for="name" className="">Your name</label>
+                                        <label htmlFor="name" className="">Your name</label>
                                     </div>
                                 </div>
                                 <div className="col-md-6">
                                     <div className="md-form mb-0">
                                         <input type="text" id="email" name="email" className="form-control"/>
-                                        <label for="email" className="">Your email</label>
+                                        <label htmlFor="email" className="">Your email</label>
                                     </div>
                                 </div>
                             </div>
@@ -27,7 +27,7 @@ const Faq = () => {
                                 <div className="col-md-12">
                                     <div className="md-form mb-0">
                                         <input type="text" id="matter" name="matter" className="form-control"/>
-                                        <label for="subject" className="">Matter</label>
+                                        <label htmlFor="subject" className="">Matter</label>
                                     </div>
                                 </div>
                             </div>
@@ -35,7 +35,7 @@ const Faq = () => {
                                 <div className="col-md-12">
                                     <div className="md-form">
                                         <textarea type="text" id="message" name="message" rows="2" className="form-control md-textarea"></textarea>
-                                        <label for="message">Details about Matter</label>
+                                        <label htmlFor="message">Details about Matter</label>
                                     </div>
                                 </div>
                             </div>

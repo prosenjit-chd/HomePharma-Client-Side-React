@@ -1,7 +1,6 @@
-import Button from '@restart/ui/esm/Button';
 import React, { useEffect, useState } from 'react';
 import { Col, Container, Modal, Row } from 'react-bootstrap';
-import { CalendarXFill, CashCoin, PersonCircle } from 'react-bootstrap-icons';
+import { CalendarXFill, CashCoin} from 'react-bootstrap-icons';
 import { useHistory } from 'react-router';
 import useCart from '../../hooks/useCart';
 import useProducts from '../../hooks/useProducts';
@@ -56,8 +55,10 @@ const CalculatePrice = () => {
             <Container className="mt-5">
                 <Row className="mt-5 pt-4">
                     <Col xs="12" md="9" lg="9">
-                        {
-                            cart.map(m => <div className="product-list d-flex justify-content-between"> 
+                        { !cart.length ?
+                         <h1 className="text-success text-center mt-5">First, Add Items</h1>
+                         :
+                            cart.map(m => <div key = {m.id} className="product-list d-flex justify-content-between"> 
                                 <div>
                                 <h4 className="product-name text-success">{m.title}</h4>
                                 <p className="text-dark">Price: {m.price}</p>
@@ -70,7 +71,7 @@ const CalculatePrice = () => {
                         }
                     </Col>
                     <Col xs="12" md="3" lg="3">
-                    <div class="cart-list">
+                    <div className="cart-list">
                         <h3>Order Summary</h3>
                         <h5>Items Ordered: {totalQuantity}</h5>
                         <br />
