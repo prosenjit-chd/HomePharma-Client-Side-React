@@ -71,6 +71,30 @@ const Home = () => {
                     }
                 </Row>
             </Container>
+            {/* Partner section  */}
+            <section className="container partner">
+                <div className="text-center-partner">
+                    <h2>Our Partners</h2>
+                </div>
+                <div className="partners-logo-list row d-flex justify-content-center">
+                    <div className="partner-logo col-lg-3 col-sm-12 mx-auto">
+                        <img src="http://www.e-home2u.com/images/square_banner.jpg" alt=""/>
+                    </div>
+                    <div className="partner-logo col-lg-3 col-sm-12 mx-auto">
+                        <img src="https://thefinancialexpress.com.bd/uploads/1589026742.png" alt=""/>
+                    </div>
+                    <div className="partner-logo col-lg-2 col-sm-12 mx-auto">
+                        <img src="https://media-exp1.licdn.com/dms/image/C510BAQFb0qdrI-ue4Q/company-logo_200_200/0/1519898769342?e=2159024400&v=beta&t=o2xQeYbG-0gp3DseG2eA3Qd5DHVn-PryuZ5U6b0pEbU" alt=""/>
+                    </div>   
+                </div>
+            </section>
+
+            {/* Location section  */}
+            <Container className="mt-4">
+                    <h2 className="text-success">Find Us Your Near for Phycially test</h2>
+                    <img className="img-fluid" src="https://pbs.twimg.com/media/FCEz5NkVcAEgfhS?format=jpg&name=large" />
+            </Container>
+
         </div>
 
     );
