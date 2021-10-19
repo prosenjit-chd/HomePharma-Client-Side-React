@@ -16,6 +16,7 @@ import NotFound from './components/NotFound/NotFound';
 import SignUp from './components/SignUp/SignUp';
 import CalculatePrice from './components/CalculatePrice/CalculatePrice';
 import AuthProvider from './context/AuthProvider';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 
 
 function App() {
@@ -37,9 +38,9 @@ function App() {
            <Route path="/services">
               <Services> </Services>
            </Route>
-           <Route path="/service/:id">
+           <PrivateRoute path="/service/:id">
             <ServiceDetails> </ServiceDetails>
-          </Route>
+          </PrivateRoute>
           <Route path="/signin">
               <Log> </Log>
             </Route>

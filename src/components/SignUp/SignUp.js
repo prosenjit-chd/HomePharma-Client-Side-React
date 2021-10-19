@@ -39,7 +39,7 @@ const SignUp = () => {
         }
         else {
             registerNewUser(email, password, name);
-            history.push("/home");
+            history.push("/signin");
 
         }
     }

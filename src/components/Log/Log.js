@@ -10,7 +10,7 @@ const Log = () => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
 
-    const { signInUsingGoogle, processLogin, setIsLoading, error } = useAuth();
+    const { signInUsingGoogle, processLogin, setIsLoading, error, setError } = useAuth();
     const location = useLocation();
     // console.log('came from:', location.state?.from)
     const history = useHistory();
@@ -37,9 +37,14 @@ const Log = () => {
 
     const handleSimpleSignIn = (e) => {
         e.preventDefault();
-        console.log(email, password);
-        processLogin(email, password);
-        history.push("/home");
+        processLogin(email, password)
+        .then(result =>{
+            setError('')
+            history.push(redirect_url)
+        })
+        .catch(error=> {
+            setError(error.message)
+        })
     }
 
 

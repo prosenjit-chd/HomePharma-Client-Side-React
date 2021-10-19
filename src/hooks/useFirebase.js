@@ -48,33 +48,36 @@ const useFirebase = () => {
     }
 
     const processLogin = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then(result => {
-                const { displayName, email, photoURL } = result.user;
-                const loggedInUser = {
-                    name: displayName,
-                    email: email,
-                    photo: photoURL
-                };
-                setUser(loggedInUser);
-                setError('');
-            })
-            .catch(error => {
-                setError(error.message);
-            })
+        setIsLoading(true);
+        return(signInWithEmailAndPassword(auth, email, password));
+        // signInWithEmailAndPassword(auth, email, password)
+        //     .then(result => {
+        //         const { displayName, email, photoURL } = result.user;
+        //         const loggedInUser = {
+        //             name: displayName,
+        //             email: email,
+        //             photo: photoURL
+        //         };
+        //         setUser(loggedInUser);
+        //         setError('');
+        //     })
+        //     .catch(error => {
+        //         setError(error.message);
+        //     })
     }
 
     const registerNewUser = (email, password, name) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(result => {
-                const user = result.user;
-                console.log(user);
+                logOut();
                 setError('');
                 verifyEmail();
-                setUserName(name);
             })
             .catch(error => {
                 setError(error.message);
+            })
+            .finally(()=>{
+                setUserName(name);
             })
     }
 
